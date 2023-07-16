@@ -35,10 +35,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'Start',
 		'Freeplay',
-		//#if MODS_ALLOWED 'mods', #end
-		//#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'Credits',
-		//#if !switch 'donate', #end
 		'Options'
 	];
 
@@ -80,6 +77,7 @@ class MainMenuState extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('mainmenu/bg'));
 		//bg.scrollFactor.set(0, yScroll);
 		//bg.setGraphicSize(Std.int(bg.width * 1.175));
+		bg.scrollFactor.set(0.5, 0.5);
 		bg.updateHitbox();
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
@@ -88,12 +86,13 @@ class MainMenuState extends MusicBeatState
 		characters = new FlxSprite().loadGraphic(Paths.image('mainmenu/kaiAquaMenu1'));
 		characters.updateHitbox();
 		characters.screenCenter();
+		characters.scrollFactor.set(0.75, 0.75);
 		add(characters);
 
-		camFollow = new FlxObject(0, 0, 1, 1);
-		camFollowPos = new FlxObject(0, 0, 1, 1);
-		add(camFollow);
-		add(camFollowPos);
+		//camFollow = new FlxObject(0, 0, 1, 1);
+		//camFollowPos = new FlxObject(0, 0, 1, 1);
+		//add(camFollow);
+		//add(camFollowPos);
 
 		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
 		//magenta.scrollFactor.set(0, yScroll);
@@ -108,12 +107,15 @@ class MainMenuState extends MusicBeatState
 		// magenta.scrollFactor.set();
 
 		title = new FlxText(0, 500, 0, 'Title Here', 100);
-		title.setFormat('Coves', 60);
+		title.setFormat(Paths.font('coves.otf'), 60);
+		title.bold = true;
 		title.screenCenter(X);
 		add(title);
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
+
+		//FlxG.camera.follow(camFollowPos, null, 1);
 
 		var scale:Float = 1;
 		/*if(optionShit.length > 6) {
@@ -124,42 +126,10 @@ class MainMenuState extends MusicBeatState
 		{
 			var offset:Float = 200 - (Math.max(optionShit.length, 4) - 4) * 80;
 			var menuItem:FlxText = new FlxText((i * 250) + offset, 600, 0, optionShit[i], 100);
-			menuItem.setFormat('Coves', 40);
+			menuItem.setFormat(Paths.font('coves.otf'), 40);
 			menuItem.ID = i;
 			menuItems.add(menuItem);
 		}
-
-		//for (i in 0...optionShit.length)
-		//{
-		//	var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-		//	var menuItem:FlxSprite = new FlxSprite(0, (i * 140)  + offset);
-		//	menuItem.scale.x = scale;
-		//	menuItem.scale.y = scale;
-		//	menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
-		//	menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
-		//	menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
-		//	menuItem.animation.play('idle');
-		//	menuItem.ID = i;
-		//	menuItem.screenCenter(X);
-		//	menuItems.add(menuItem);
-		//	var scr:Float = (optionShit.length - 4) * 0.135;
-		//	if(optionShit.length < 6) scr = 0;
-		//	menuItem.scrollFactor.set(0, scr);
-		//	menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-		//	//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
-		//	menuItem.updateHitbox();
-		//}
-
-		//FlxG.camera.follow(camFollowPos, null, 1);
-
-		//var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
-		//versionShit.scrollFactor.set();
-		//versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		//add(versionShit);
-		//var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, "Friday Night Funkin' v" + Application.current.meta.get('version'), 12);
-		//versionShit.scrollFactor.set();
-		//versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		//add(versionShit);
 
 		// NG.core.calls.event.logEvent('swag').send();
 
@@ -201,7 +171,7 @@ class MainMenuState extends MusicBeatState
 		}
 
 		var lerpVal:Float = CoolUtil.boundTo(elapsed * 7.5, 0, 1);
-		camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
+		//camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
 
 		if (!selectedSomethin)
 		{
@@ -217,12 +187,12 @@ class MainMenuState extends MusicBeatState
 				changeItem(1);
 			}
 
-			if (controls.BACK)
-			{
-				selectedSomethin = true;
-				FlxG.sound.play(Paths.sound('cancelMenu'));
-				MusicBeatState.switchState(new TitleState());
-			}
+			//if (controls.BACK)
+			//{
+			//	selectedSomethin = true;
+			//	FlxG.sound.play(Paths.sound('cancelMenu'));
+			//	MusicBeatState.switchState(new TitleState());
+			//}
 
 			if (controls.ACCEPT)
 			{
@@ -281,11 +251,6 @@ class MainMenuState extends MusicBeatState
 		}
 
 		super.update(elapsed);
-
-		//menuItems.forEach(function(spr:FlxSprite)
-		//{
-		//	spr.screenCenter(X);
-		//});
 	}
 
 	function changeItem(huh:Int = 0)
@@ -299,22 +264,5 @@ class MainMenuState extends MusicBeatState
 
 		for (item in menuItems)
 			item.alpha = item.ID == curSelected ? 1 : 0.6;
-
-		//menuItems.forEach(function(spr:FlxSprite)
-		//{
-		//	spr.animation.play('idle');
-		//	spr.updateHitbox();
-//
-		//	if (spr.ID == curSelected)
-		//	{
-		//		spr.animation.play('selected');
-		//		var add:Float = 0;
-		//		if(menuItems.length > 4) {
-		//			add = menuItems.length * 8;
-		//		}
-		//		camFollow.setPosition(spr.getGraphicMidpoint().x, spr.getGraphicMidpoint().y - add);
-		//		spr.centerOffsets();
-		//	}
-		//});
 	}
 }
