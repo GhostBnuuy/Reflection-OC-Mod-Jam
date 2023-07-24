@@ -101,7 +101,7 @@ class FreeplayState extends MusicBeatState
 			}
 		}*/
 
-		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		bg = new FlxSprite().loadGraphic(Paths.image('freeplay/bg'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 		bg.screenCenter();
@@ -142,13 +142,13 @@ class FreeplayState extends MusicBeatState
 
 		scoreBG = new FlxSprite(scoreText.x - 6, 0).makeGraphic(1, 66, 0xFF000000);
 		scoreBG.alpha = 0.6;
-		add(scoreBG);
+		//add(scoreBG);
 
 		diffText = new FlxText(scoreText.x, scoreText.y + 36, 0, "", 24);
 		diffText.font = scoreText.font;
-		add(diffText);
+		//add(diffText);
 
-		add(scoreText);
+		//add(scoreText);
 
 		if(curSelected >= songs.length) curSelected = 0;
 		bg.color = songs[curSelected].color;
@@ -182,9 +182,13 @@ class FreeplayState extends MusicBeatState
 			trace(md);
 		 */
 
+		var overlayBars:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('bars'));
+		add(overlayBars);
+		overlayBars.screenCenter();
+
 		var textBG:FlxSprite = new FlxSprite(0, FlxG.height - 26).makeGraphic(FlxG.width, 26, 0xFF000000);
 		textBG.alpha = 0.6;
-		add(textBG);
+		//add(textBG);
 
 		#if PRELOAD_ALL
 		var leText:String = "Press SPACE to listen to the Song / Press CTRL to open the Gameplay Changers Menu / Press RESET to Reset your Score and Accuracy.";

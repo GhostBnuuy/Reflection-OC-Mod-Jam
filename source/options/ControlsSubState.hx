@@ -71,8 +71,8 @@ class ControlsSubState extends MusicBeatSubstate {
 	public function new() {
 		super();
 
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
-		bg.color = 0xFFea71fd;
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('options/bg'));
+		bg.updateHitbox();
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
@@ -109,6 +109,16 @@ class ControlsSubState extends MusicBeatSubstate {
 				if(curSelected < 0) curSelected = i;
 			}
 		}
+
+		var bars:FlxSprite = new FlxSprite().loadGraphic(Paths.image('bars'));
+		bars.screenCenter();
+		add(bars);
+
+		var controls:FlxText = new FlxText(0, 0, 0, 'Controls', 200);
+		controls.setFormat(Paths.font('riffic.ttf'), 50);
+		add(controls);
+		controls.screenCenter(X);
+
 		changeSelection();
 	}
 

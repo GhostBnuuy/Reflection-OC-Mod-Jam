@@ -55,8 +55,8 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		DiscordClient.changePresence(rpcTitle, null);
 		#end
 		
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
-		bg.color = 0xFFea71fd;
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('options/bg'));
+		bg.updateHitbox();
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
@@ -74,12 +74,6 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		descBox = new FlxSprite().makeGraphic(1, 1, FlxColor.BLACK);
 		descBox.alpha = 0.6;
 		add(descBox);
-
-		var titleText:Alphabet = new Alphabet(75, 40, title, true);
-		titleText.scaleX = 0.6;
-		titleText.scaleY = 0.6;
-		titleText.alpha = 0.4;
-		add(titleText);
 
 		descText = new FlxText(50, 600, 1180, "", 32);
 		descText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -120,6 +114,18 @@ class BaseOptionsMenu extends MusicBeatSubstate
 			}
 			updateTextFrom(optionsArray[i]);
 		}
+
+		var bars:FlxSprite = new FlxSprite().loadGraphic(Paths.image('bars'));
+		bars.screenCenter();
+		add(bars);
+
+		var titleText:FlxText = new FlxText(0, 0, 0, title, 200);
+		titleText.setFormat(Paths.font('riffic.ttf'), 50);
+		titleText.screenCenter(X);
+		// titleText.scaleX = 0.6;
+		// titleText.scaleY = 0.6;
+		// titleText.alpha = 0.4;
+		add(titleText);
 
 		changeSelection();
 		reloadCheckboxes();
