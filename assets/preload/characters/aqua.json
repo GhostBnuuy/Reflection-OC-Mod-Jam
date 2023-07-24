@@ -1,59 +1,59 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"anim": "idle",
+			"loop": false,
 			"fps": 24,
-			"name": "Aqua Idle",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "Aqua Idle"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				21,
+				19,
 				-4
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singLEFT",
-			"fps": 24,
-			"name": "Aqua Left",
-			"indices": []
+			"indices": [],
+			"name": "Aqua Left"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				-1,
-				-11
+				-2,
+				-10
 			],
-			"anim": "singDOWN",
+			"loop": false,
 			"fps": 24,
-			"name": "Aqua Down",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Aqua Down"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-10,
-				15
+				14
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 24,
-			"name": "Aqua Up",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "Aqua Up"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-15,
 				0
 			],
-			"anim": "singRIGHT",
+			"loop": false,
 			"fps": 24,
-			"name": "Aqua Right",
-			"indices": []
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Aqua Right"
 		}
 	],
 	"no_antialiasing": false,
@@ -73,6 +73,6 @@
 		70,
 		20
 	],
-	"sing_duration": 6.1,
+	"sing_duration": 5.7,
 	"scale": 0.9
 }

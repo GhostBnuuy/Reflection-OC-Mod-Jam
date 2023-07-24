@@ -9,7 +9,7 @@ function onCreate()
     scaleObject('bg', 1.2, 1.2)
     addLuaSprite('bg', false)
 
-    makeLuaSprite('bg2', path..'bg2', -370, -1200)
+    makeLuaSprite('bg2', path..'bg2', -375, -1200)
     scaleObject('bg2', 1.2, 1.2)
     addLuaSprite('bg2', false)
 
@@ -19,6 +19,7 @@ function onCreate()
 
     makeLuaSprite('lighting', path..'lighting', -70, -400)
     scaleObject('lighting', 1.2, 1.2)
+    setBlendMode('lighting', 'add')
     addLuaSprite('lighting', true)
 end
 
