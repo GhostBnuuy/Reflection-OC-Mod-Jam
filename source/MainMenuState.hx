@@ -28,6 +28,9 @@ class MainMenuState extends MusicBeatState
 	public static var psychEngineVersion:String = '0.6.3'; //This is also used for Discord RPC
 	public static var curSelected:Int = 0;
 
+	var curDifficulty:Int = 1;
+	var loadedWeeks:Array<WeekData> = [];
+
 	var menuItems:FlxTypedGroup<FlxSprite>;
 	private var camGame:FlxCamera;
 	private var camAchievement:FlxCamera;
@@ -49,9 +52,6 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
-		#if MODS_ALLOWED
-		Paths.pushGlobalMods();
-		#end
 		WeekData.loadTheFirstEnabledMod();
 
 		#if desktop
@@ -59,6 +59,10 @@ class MainMenuState extends MusicBeatState
 		DiscordClient.changePresence("In the Menus", null);
 		#end
 		debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
+
+		CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
+		WeekData.setDirectoryFromWeek();
+		WeekData.reloadWeekFiles(false);
 
 		camGame = new FlxCamera();
 		camAchievement = new FlxCamera();
@@ -121,7 +125,10 @@ class MainMenuState extends MusicBeatState
 		/*if(optionShit.length > 6) {
 			scale = 6 / optionShit.length;
 		}*/
-
+		for (i in 0...WeekData.weeksList.length){
+			var weekFile:WeekData = WeekData.weeksLoaded.get(WeekData.weeksList[i]);
+			loadedWeeks.push(weekFile);
+		}
 		for (i in 0...optionShit.length)
 		{
 			var offset:Float = 200 - (Math.max(optionShit.length, 4) - 4) * 80;
@@ -135,30 +142,8 @@ class MainMenuState extends MusicBeatState
 
 		changeItem();
 
-		#if ACHIEVEMENTS_ALLOWED
-		Achievements.loadAchievements();
-		var leDate = Date.now();
-		if (leDate.getDay() == 5 && leDate.getHours() >= 18) {
-			var achieveID:Int = Achievements.getAchievementIndex('friday_night_play');
-			if(!Achievements.isAchievementUnlocked(Achievements.achievementsStuff[achieveID][2])) { //It's a friday night. WEEEEEEEEEEEEEEEEEE
-				Achievements.achievementsMap.set(Achievements.achievementsStuff[achieveID][2], true);
-				giveAchievement();
-				ClientPrefs.saveSettings();
-			}
-		}
-		#end
-
 		super.create();
 	}
-
-	#if ACHIEVEMENTS_ALLOWED
-	// Unlocks "Freaky on a Friday Night" achievement
-	function giveAchievement() {
-		add(new AchievementObject('friday_night_play', camAchievement));
-		FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
-		trace('Giving achievement "friday_night_play"');
-	}
-	#end
 
 	var selectedSomethin:Bool = false;
 
@@ -228,7 +213,31 @@ class MainMenuState extends MusicBeatState
 								switch (daChoice)
 								{
 									case 'Start':
-										MusicBeatState.switchState(new StoryMenuState());
+										var songArray:Array<String> = [];
+										var leWeek:Array<Dynamic> = loadedWeeks[0].songs;
+										for (i in 0...leWeek.length) {
+											songArray.push(leWeek[i][0]);
+										}
+									 
+										PlayState.storyPlaylist = songArray;
+										PlayState.isStoryMode = true;
+									 
+										var diffic = CoolUtil.getDifficultyFilePath(curDifficulty);
+																			
+										if (diffic == null) {
+											diffic = '';
+										}
+									 
+										PlayState.storyDifficulty = curDifficulty;
+									 
+										PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
+										PlayState.campaignScore = 0;
+										PlayState.campaignMisses = 0;
+										{
+											LoadingState.loadAndSwitchState(new PlayState(), true);
+											FreeplayState.destroyFreeplayVocals();
+										};
+										//MusicBeatState.switchState(new StoryMenuState());
 									case 'Freeplay':
 										MusicBeatState.switchState(new FreeplayState());
 									case 'Credits':
