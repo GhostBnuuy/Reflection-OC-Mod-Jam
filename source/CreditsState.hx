@@ -3,20 +3,8 @@ package;
 #if desktop
 import Discord.DiscordClient;
 #end
-import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.addons.display.FlxGridOverlay;
-import flixel.group.FlxGroup.FlxTypedGroup;
-import flixel.math.FlxMath;
-import flixel.text.FlxText;
-import flixel.util.FlxColor;
-import flixel.tweens.FlxTween;
-import flixel.tweens.FlxEase;
-#if MODS_ALLOWED
-import sys.FileSystem;
-import sys.io.File;
-#end
 import lime.utils.Assets;
 
 using StringTools;
@@ -28,7 +16,6 @@ class CreditsState extends MusicBeatState
 	var bnuy:FlxSprite;
 	var swe:FlxSprite;
 	var brewy:FlxSprite;
-
 
 	override function create()
 	{
@@ -82,8 +69,8 @@ class CreditsState extends MusicBeatState
 		if (FlxG.mouse.overlaps(bnuy) && FlxG.mouse.justPressed)
 			CoolUtil.browserLoad("https://twitter.com/GhostBnuuy");
 		if (FlxG.mouse.overlaps(swe) && FlxG.mouse.justPressed)
-			CoolUtil.browserLoad("link goes here");
+			CoolUtil.browserLoad("https://www.youtube.com/channel/UCZ1s1XKy6ufBLjsHfTBejzw");
 		if (FlxG.mouse.overlaps(brewy) && FlxG.mouse.justPressed)
-			CoolUtil.browserLoad("link goes here");
+			CoolUtil.browserLoad("https://twitter.com/BreWyy_");
 	}
 }
