@@ -44,7 +44,7 @@ class MainMenuState extends MusicBeatState
 
 	var magenta:FlxSprite;
 	var characters:FlxSprite;
-	var title:FlxText;
+	var title:FlxSprite;
 
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
@@ -87,7 +87,11 @@ class MainMenuState extends MusicBeatState
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 
-		characters = new FlxSprite().loadGraphic(Paths.image('mainmenu/kaiAquaMenu1'));
+		characters = new FlxSprite();
+		if(!ClientPrefs.beatenWeek1)
+			characters.loadGraphic(Paths.image('mainmenu/kaiAquaMenu1'));
+		else
+			characters.loadGraphic(Paths.image('mainmenu/kaiAquaMenu2'));
 		characters.updateHitbox();
 		characters.screenCenter();
 		characters.scrollFactor.set(0.75, 0.75);
@@ -110,9 +114,10 @@ class MainMenuState extends MusicBeatState
 		
 		// magenta.scrollFactor.set();
 
-		title = new FlxText(0, 500, 0, 'Title Here', 100);
-		title.setFormat(Paths.font('coves.otf'), 60);
-		title.bold = true;
+		title = new FlxSprite(0, 470).loadGraphic(Paths.image('mainmenu/title'));
+		title.scale.set(0.8, 0.8);
+		title.antialiasing = ClientPrefs.globalAntialiasing;
+		title.updateHitbox();
 		title.screenCenter(X);
 		add(title);
 
