@@ -1,26 +1,26 @@
+local path = 'backgrounds/1/'
+
 function onCreate()
-    makeAnimatedLuaSprite('river', 'backgrounds/1/river', 100, 0)
+    makeAnimatedLuaSprite('river', path..'river', 100, 0)
     addAnimationByPrefix('river', 'idle', 'idle', 24)
     playAnim('river', 'idle', true)
     scaleObject('river', 0.9, 0.9)
     addLuaSprite('river', false)
 
-    makeLuaSprite('fence', 'backgrounds/1/fence', 0, 100)
+    makeLuaSprite('fence', path..'fence', 0, 100)
     scaleObject('fence', 0.8, 0.8)
     addLuaSprite('fence', false)
 
-    makeLuaSprite('fencefg', 'backgrounds/1/fence fg', 60, -30)
+    makeLuaSprite('fencefg', path..'fence fg', 60, -30)
     scaleObject('fencefg', 1.28, 1.28)
     addLuaSprite('fencefg', true)
-    setProperty('fencefg.visible', false)
+    setProperty('fencefg.alpha', 0)
     
-    makeAnimatedLuaSprite('riverfg', 'backgrounds/1/river_overlay', 0, 0)
+    makeAnimatedLuaSprite('riverfg', path..'river_overlay', 200, 100)
     addAnimationByPrefix('riverfg', 'idle', 'river_overlay idle', 2)
     playAnim('riverfg', 'idle', true)
     addLuaSprite('riverfg', true)
-    setObjectCamera('riverfg', 'camHUD')
-    setProperty('riverfg.alpha', 0.9)
-    setProperty('riverfg.visible', false)
+    setProperty('riverfg.alpha', 0)
 
 end
 
@@ -35,15 +35,25 @@ function onCreatePost()
 end
 
 function onBeatHit()
-    if curBeat == 2 then
+    if curBeat == 96 then
+        doTweenAlpha('hudgone', 'camHUD', 0, 5, 'linear')
+        doTweenZoom('zoominyeah', 'camGame', 2, 5, 'linear')
+    elseif curBeat == 98 then
+        doTweenAlpha('bye aqua', 'boyfriend', 0, 5, 'linear')
+        doTweenAlpha('fencea', 'fence', 0, 5, 'linear')
+        doTweenAlpha('riveraaa', 'river', 0, 5, 'linear')
+    elseif curBeat == 104 then
         secondStage()
+    elseif curBeat == 124 then
+        doTweenAlpha('hudisback', 'camHUD', 1, 5, 'linear')
+        
     end
 end
 
 function secondStage()
-    setProperty('fence.visible', false)
-    setProperty('river.visible', false)
-    setProperty('fencefg.visible', true)
-    setProperty('riverfg.visible', true)
-    setProperty('defaultCamZoom', 1)
+    triggerEvent('Change Character', '0', 'aqua2')
+    doTweenAlpha('fencefga', 'fencefg', 1, 7, 'linear')
+    doTweenAlpha('riverfgf', 'riverfg', 0.9, 7, 'linear')
+    doTweenAlpha('aquaappear', 'boyfriend', 1, 7, 'linear')
+    doTweenZoom('zoomoout', 'camGame', 1.1, 7, 'linear')
 end
