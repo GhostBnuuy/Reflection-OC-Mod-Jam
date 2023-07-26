@@ -4,11 +4,13 @@ import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSubState;
 import flixel.math.FlxMath;
+import flixel.FlxSprite;
 import flixel.math.FlxPoint;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
+import flixel.util.FlxColor;
 
 class GameOverSubstate extends MusicBeatSubstate
 {
@@ -20,17 +22,17 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	var stageSuffix:String = "";
 
-	public static var characterName:String = 'bf-dead';
+	public static var characterName:String = 'gameover';
 	public static var deathSoundName:String = 'fnf_loss_sfx';
-	public static var loopSoundName:String = 'gameOver';
+	public static var loopSoundName:String = 'gameover1';
 	public static var endSoundName:String = 'gameOverEnd';
 
 	public static var instance:GameOverSubstate;
 
 	public static function resetVariables() {
-		characterName = 'bf-dead';
+		characterName = 'gameover';
 		deathSoundName = 'fnf_loss_sfx';
-		loopSoundName = 'gameOver';
+		loopSoundName = 'gameover1';
 		endSoundName = 'gameOverEnd';
 	}
 
@@ -58,7 +60,7 @@ class GameOverSubstate extends MusicBeatSubstate
 		camFollow = new FlxPoint(boyfriend.getGraphicMidpoint().x, boyfriend.getGraphicMidpoint().y);
 
 		FlxG.sound.play(Paths.sound(deathSoundName));
-		Conductor.changeBPM(100);
+		Conductor.changeBPM(75);
 		// FlxG.camera.followLerp = 1;
 		// FlxG.camera.focusOn(FlxPoint.get(FlxG.width / 2, FlxG.height / 2));
 		FlxG.camera.scroll.set();
@@ -156,7 +158,12 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	function coolStartDeath(?volume:Float = 1):Void
 	{
-		FlxG.sound.playMusic(Paths.music(loopSoundName), volume);
+		var dumb = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		add(dumb);
+
+		FlxTween.tween(dumb, {alpha: 0}, 2);
+		FlxG.sound.playMusic(Paths.music(loopSoundName), 0.8);
+		FlxG.sound.music.fadeIn(2, 0, 0.8);
 	}
 
 	function endBullshit():Void
