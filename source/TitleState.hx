@@ -625,8 +625,8 @@ class TitleState extends MusicBeatState
 			{
 				case 1:
 					//FlxG.sound.music.stop();
-					FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
-					FlxG.sound.music.fadeIn(4, 0, 0.7);
+					FlxG.sound.playMusic(Paths.music('lonelyNights'), 0.5);
+					FlxG.sound.music.fadeIn(3, 0.5, 0.8);
 				case 2:
 					createCoolText(['Brought to you by']);
 				case 4:
