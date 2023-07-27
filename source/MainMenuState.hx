@@ -88,10 +88,8 @@ class MainMenuState extends MusicBeatState
 		add(bg);
 
 		characters = new FlxSprite();
-		if(!ClientPrefs.beatenWeek1)
-			characters.loadGraphic(Paths.image('mainmenu/kaiAquaMenu1'));
-		else
-			characters.loadGraphic(Paths.image('mainmenu/kaiAquaMenu2'));
+		characters.loadGraphic(Paths.image('mainmenu/kaiAquaMenu1'));
+		//characters.loadGraphic(Paths.image('mainmenu/kaiAquaMenu2'));
 		characters.updateHitbox();
 		characters.screenCenter();
 		characters.scrollFactor.set(0.75, 0.75);
