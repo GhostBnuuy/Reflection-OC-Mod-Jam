@@ -1,59 +1,59 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "Aqua Idle"
+			"fps": 24,
+			"name": "Aqua Idle",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				19,
 				-4
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "Aqua Left"
+			"fps": 24,
+			"name": "Aqua Left",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-2,
 				-10
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "Aqua Down"
+			"fps": 24,
+			"name": "Aqua Down",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-10,
 				14
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
-			"name": "Aqua Up"
+			"fps": 24,
+			"name": "Aqua Up",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-15,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "Aqua Right"
+			"fps": 24,
+			"name": "Aqua Right",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
@@ -62,12 +62,12 @@
 		0,
 		0
 	],
-	"healthicon": "face",
+	"healthicon": "aquamu",
 	"flip_x": true,
 	"healthbar_colors": [
-		161,
-		161,
-		161
+		86,
+		24,
+		197
 	],
 	"camera_position": [
 		70,

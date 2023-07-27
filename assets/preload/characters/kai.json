@@ -1,59 +1,59 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"anim": "idle",
+			"loop": false,
 			"fps": 24,
-			"name": "Kai Idle",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "Kai Idle"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				57,
 				-1
 			],
-			"anim": "singLEFT",
+			"loop": false,
 			"fps": 24,
-			"name": "Kai Left",
-			"indices": []
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Kai Left"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-10,
 				-20
 			],
-			"anim": "singDOWN",
+			"loop": false,
 			"fps": 24,
-			"name": "Kai Down",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Kai Down"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				3,
 				10
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 24,
-			"name": "Kai Up",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "Kai Up"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-22,
 				0
 			],
-			"anim": "singRIGHT",
+			"loop": false,
 			"fps": 24,
-			"name": "Kai Right",
-			"indices": []
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Kai Right"
 		}
 	],
 	"no_antialiasing": false,
@@ -62,12 +62,12 @@
 		60,
 		0
 	],
-	"healthicon": "face",
+	"healthicon": "kaimu",
 	"flip_x": false,
 	"healthbar_colors": [
-		161,
-		161,
-		161
+		0,
+		193,
+		234
 	],
 	"camera_position": [
 		130,
