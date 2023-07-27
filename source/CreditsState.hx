@@ -98,6 +98,6 @@ class CreditsState extends MusicBeatState
 			CoolUtil.browserLoad("https://twitter.com/BreWyy_");
 
 		if (FlxG.mouse.overlaps(beepy) && FlxG.mouse.justPressed)
-			CoolUtil.browserLoad("link for beepy goes here");
+			CoolUtil.browserLoad("https://youtube.com/@MissBeepy");
 	}
 }
