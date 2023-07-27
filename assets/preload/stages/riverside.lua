@@ -3,7 +3,7 @@ startcd = false
 
 function onCreate()
     makeAnimatedLuaSprite('river', path..'river', 100, 0)
-    addAnimationByPrefix('river', 'idle', 'idle', 2)
+    addAnimationByPrefix('river', 'idle', 'idle', 12)
     playAnim('river', 'idle', true)
     scaleObject('river', 0.9, 0.9)
     addLuaSprite('river', false)
@@ -61,7 +61,8 @@ function onBeatHit()
         secondStage()
     elseif curBeat == 124 then
         doTweenAlpha('hudisback', 'camHUD', 1, 5, 'linear')
-        
+    elseif curBeat == 192 then
+        doTweenAlpha('hudgoneforever', 'camHUD', 0, 3, 'linear')
     end
 end
 
