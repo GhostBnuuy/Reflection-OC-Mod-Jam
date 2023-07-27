@@ -1,8 +1,20 @@
 {
+	"storyName": "",
+	"difficulties": "Normal",
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"weekBefore": "tutorial",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"startUnlocked": true,
+	"hideStoryMode": false,
 	"songs": [
 		[
 			"reminiscence",
-			"dad",
+			"aquar",
 			[
 				146,
 				113,
@@ -10,8 +22,8 @@
 			]
 		],
 		[
-			"miss you",
-			"dad",
+			"miss-you",
+			"kaimu",
 			[
 				146,
 				113,
@@ -19,23 +31,11 @@
 			]
 		]
 	],
-	"hiddenUntilUnlocked": false,
-	"hideFreeplay": false,
-	"weekBackground": "stage",
-	"difficulties": "Normal",
 	"weekCharacters": [
 		"dad",
 		"bf",
 		"gf"
 	],
-	"storyName": "",
-	"weekName": "midnight meeting",
-	"freeplayColor": [
-		146,
-		113,
-		253
-	],
-	"hideStoryMode": false,
-	"weekBefore": "tutorial",
-	"startUnlocked": true
+	"hiddenUntilUnlocked": false,
+	"weekName": "midnight meeting"
 }

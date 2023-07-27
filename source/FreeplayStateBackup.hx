@@ -41,14 +41,12 @@ class FreeplayState extends MusicBeatState
 	var intendedScore:Int = 0;
 	var intendedRating:Float = 0;
 
-	private var grpSongs:FlxTypedGroup<FlxSprite>;
+	private var grpSongs:FlxTypedGroup<Alphabet>;
 	private var curPlaying:Bool = false;
 
 	private var iconArray:Array<HealthIcon> = [];
 
 	var bg:FlxSprite;
-	var aqua:FlxSprite;
-	var aquaKai:FlxSprite;
 	var intendedColor:Int;
 	var colorTween:FlxTween;
 
@@ -63,7 +61,7 @@ class FreeplayState extends MusicBeatState
 
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In Freeplay", null);
+		DiscordClient.changePresence("In the Menus", null);
 		#end
 
 		for (i in 0...WeekData.weeksList.length) {
@@ -108,33 +106,36 @@ class FreeplayState extends MusicBeatState
 		add(bg);
 		bg.screenCenter();
 
-		grpSongs = new FlxTypedGroup<FlxSprite>();
+		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
 
 		for (i in 0...songs.length)
 		{
-			var sexyOffset:Float = 250 - (Math.max(songs.length, 4) - 4) * 50;
-			var songText:FlxSprite = new FlxSprite(580, (i * 200) + sexyOffset).loadGraphic(Paths.image("freeplay/" + songs[i].songName));
-			songText.ID = i;
+			var songText:Alphabet = new Alphabet(90, 320, songs[i].songName, true);
+			songText.isMenuItem = true;
+			songText.targetY = i - curSelected;
 			grpSongs.add(songText);
 
+			var maxWidth = 980;
+			if (songText.width > maxWidth)
+			{
+				songText.scaleX = maxWidth / songText.width;
+			}
+			songText.snapToPosition();
+
 			Paths.currentModDirectory = songs[i].folder;
+			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
+			icon.sprTracker = songText;
+
+			// using a FlxGroup is too much fuss!
+			iconArray.push(icon);
+			add(icon);
+
+			// songText.x += 40;
+			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
+			// songText.screenCenter(X);
 		}
 		WeekData.setDirectoryFromWeek();
-
-		aqua = new FlxSprite(60, 100);
-		aqua.frames = Paths.getSparrowAtlas('freeplay/rem-anim');
-		aqua.animation.addByPrefix('idleaqua', 'Idle', 24);
-		add(aqua);
-		aqua.animation.play('idleaqua');
-		//aqua.visible = false;
-
-		aquaKai = new FlxSprite(30, 50);
-		aquaKai.frames = Paths.getSparrowAtlas('freeplay/missyou-anim');
-		aquaKai.animation.addByPrefix('idleak', 'Idle', 24);
-		add(aquaKai);
-		aquaKai.animation.play('idleak');
-		//aquaKai.visible = false;
 
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
 		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
@@ -184,12 +185,6 @@ class FreeplayState extends MusicBeatState
 		var overlayBars:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('bars'));
 		add(overlayBars);
 		overlayBars.screenCenter();
-
-		var titleText:FlxText = new FlxText(0, 0, 0, "Freeplay", 200);
-		titleText.setFormat(Paths.font('riffic.ttf'), 50);
-		titleText.antialiasing = ClientPrefs.globalAntialiasing;
-		titleText.screenCenter(X);
-		add(titleText);
 
 		var textBG:FlxSprite = new FlxSprite(0, FlxG.height - 26).makeGraphic(FlxG.width, 26, 0xFF000000);
 		textBG.alpha = 0.6;
@@ -444,6 +439,19 @@ class FreeplayState extends MusicBeatState
 			curSelected = songs.length - 1;
 		if (curSelected >= songs.length)
 			curSelected = 0;
+			
+		var newColor:Int = songs[curSelected].color;
+		if(newColor != intendedColor) {
+			if(colorTween != null) {
+				colorTween.cancel();
+			}
+			intendedColor = newColor;
+			colorTween = FlxTween.color(bg, 1, bg.color, intendedColor, {
+				onComplete: function(twn:FlxTween) {
+					colorTween = null;
+				}
+			});
+		}
 
 		// selector.y = (70 * curSelected) + 30;
 
@@ -454,26 +462,26 @@ class FreeplayState extends MusicBeatState
 
 		var bullShit:Int = 0;
 
-		//for (i in 0...iconArray.length)
-		//{
-		//	iconArray[i].alpha = 0.6;
-		//}
+		for (i in 0...iconArray.length)
+		{
+			iconArray[i].alpha = 0.6;
+		}
 
-		//iconArray[curSelected].alpha = 1;
+		iconArray[curSelected].alpha = 1;
 
 		for (item in grpSongs.members)
 		{
-			item.alpha = item.ID == curSelected ? 1 : 0.6;
-		}
+			item.targetY = bullShit - curSelected;
+			bullShit++;
 
-		// I may be stupid
-		if (songs[curSelected].songName.toLowerCase() == 'reminiscence'){
-			aqua.visible = true;
-			aquaKai.visible = false;
-		}
-		else if (songs[curSelected].songName.toLowerCase() == 'miss-you'){
-			aqua.visible = false;
-			aquaKai.visible = true;
+			item.alpha = 0.6;
+			// item.setGraphicSize(Std.int(item.width * 0.8));
+
+			if (item.targetY == 0)
+			{
+				item.alpha = 1;
+				// item.setGraphicSize(Std.int(item.width));
+			}
 		}
 		
 		Paths.currentModDirectory = songs[curSelected].folder;
