@@ -1,5 +1,6 @@
 local path = 'backgrounds/2/'
 local cgs = 'backgrounds/CG/'
+fml = {'iconP2', 'healthBar', 'healthBarBG', 'scoreTxt', 'timeBar', 'timeBarBG', 'timeTxt'}
 
 function onCreate()
     makeLuaSprite('sky', path..'nightsky', -418, -1200)
@@ -85,13 +86,18 @@ function onBeatHit()
         noteTweenAlpha('notes gone too3 im dumb', 3, 0, 11, 'linear')
         triggerEvent('Change Character', '0', 'aqua-alt')
     elseif curBeat == 384 then
-        doTweenAlpha('hudaaaaaa', 'camHUD', 0, 3, 'linear')
-        doTweenAlpha('fadeout1', 'boyfriend', 0, 3, 'linear')
-        doTweenAlpha('fadeout2', 'sky', 0, 3, 'linear')
-        doTweenAlpha('fadeout3', 'bg', 0, 3, 'linear')
-        doTweenAlpha('fadeout4', 'bg2', 0, 3, 'linear')
-        doTweenAlpha('fadeout5', 'fg', 0, 3, 'linear')
-        doTweenAlpha('fadeout6', 'lighting', 0, 3, 'linear')
+        doTweenAlpha('by the nine im tweakin', 'camGame', 0, 2.5, 'linear')
+        doTweenAlpha('losing my mind p1', 'iconP1', 0, 2.5)
+        doTweenAlpha('losing my mind p2', 'healthBar', 0, 2.5)
+        doTweenAlpha('losing my mind p3', 'healthBarBG', 0, 2.5)
+        doTweenAlpha('losing my mind p4', 'scoreTxt', 0, 2.5)
+        doTweenAlpha('losing my mind p5', 'timeBar', 0, 2.5)
+        doTweenAlpha('losing my mind p6', 'timeBarBG', 0, 2.5)
+        doTweenAlpha('losing my mind p7', 'timeTxt', 0, 2.5)
+        noteTweenAlpha('notes gone too4', 4, 0, 2.5, 'linear')
+        noteTweenAlpha('notes gone too5', 5, 0, 2.5, 'linear')
+        noteTweenAlpha('notes gone too6', 6, 0, 2.5, 'linear')
+        noteTweenAlpha('notes gone too7 fuck', 7, 0, 2.5, 'linear') 
     elseif curBeat == 390 then
         setProperty('text1.visible', true)
     elseif curBeat == 398 then
