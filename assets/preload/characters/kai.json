@@ -1,25 +1,36 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "Kai Idle"
+			"fps": 24,
+			"name": "Kai Idle",
+			"indices": []
 		},
 		{
 			"offsets": [
 				57,
 				-1
 			],
-			"loop": false,
+			"indices": [
+				0,
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8
+			],
 			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
+			"loop": false,
 			"name": "Kai Left"
 		},
 		{
@@ -27,10 +38,21 @@
 				-10,
 				-20
 			],
-			"loop": false,
+			"indices": [
+				0,
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8
+			],
 			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
+			"loop": false,
 			"name": "Kai Down"
 		},
 		{
@@ -38,10 +60,21 @@
 				3,
 				10
 			],
-			"loop": false,
+			"indices": [
+				0,
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8
+			],
 			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
+			"loop": false,
 			"name": "Kai Up"
 		},
 		{
@@ -49,10 +82,21 @@
 				-22,
 				0
 			],
-			"loop": false,
+			"indices": [
+				0,
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8
+			],
 			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
+			"loop": false,
 			"name": "Kai Right"
 		}
 	],
@@ -73,6 +117,6 @@
 		130,
 		20
 	],
-	"sing_duration": 5.7,
+	"sing_duration": 5.1,
 	"scale": 0.9
 }

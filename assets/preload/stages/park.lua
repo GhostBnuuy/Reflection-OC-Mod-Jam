@@ -23,6 +23,18 @@ function onCreate()
     setBlendMode('lighting', 'add')
     addLuaSprite('lighting', true)
 
+    makeLuaText('text1', 'Thank you\nFor everything...', 0, 450, 250)
+    setTextSize('text1', 60)
+    setTextFont('text1', 'coves.otf')
+    addLuaText('text1')
+    setProperty('text1.visible', false)
+
+    makeLuaText('text2', 'Farewell', 0, 530, 380)
+    setTextSize('text2', 60)
+    setTextFont('text2', 'coves.otf')
+    addLuaText('text2')
+    setProperty('text2.visible', false)
+
     -- the "cutscene art"
 
     makeLuaSprite('c1', cgs..'CG1', 0, 0)
@@ -71,5 +83,21 @@ function onBeatHit()
         noteTweenAlpha('notes gone too1', 1, 0, 11, 'linear')
         noteTweenAlpha('notes gone too2', 2, 0, 11, 'linear')
         noteTweenAlpha('notes gone too3 im dumb', 3, 0, 11, 'linear')
+        triggerEvent('Change Character', '0', 'aqua-alt')
+    elseif curBeat == 384 then
+        doTweenAlpha('hudaaaaaa', 'camHUD', 0, 3, 'linear')
+        doTweenAlpha('fadeout1', 'boyfriend', 0, 3, 'linear')
+        doTweenAlpha('fadeout2', 'sky', 0, 3, 'linear')
+        doTweenAlpha('fadeout3', 'bg', 0, 3, 'linear')
+        doTweenAlpha('fadeout4', 'bg2', 0, 3, 'linear')
+        doTweenAlpha('fadeout5', 'fg', 0, 3, 'linear')
+        doTweenAlpha('fadeout6', 'lighting', 0, 3, 'linear')
+    elseif curBeat == 390 then
+        setProperty('text1.visible', true)
+    elseif curBeat == 398 then
+        setProperty('text1.visible', false)
+        setProperty('text2.visible', true)
+    elseif curBeat == 404 then
+        doTweenAlpha('text2gone', 'text2', 0, 3, 'linear')
     end
 end
