@@ -71,7 +71,7 @@ end
 function onStepHit()
     if curStep == 118 then
         doTweenAlpha('hudappears', 'camHUD', 1, 5, 'linear')
-    elseif curStep == 832 and isStoryMode then
+    elseif curStep == 831 and isStoryMode then
         playAnim('boyfriend', 'shocked')
     end
 end
