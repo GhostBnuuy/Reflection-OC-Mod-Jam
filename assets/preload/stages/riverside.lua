@@ -39,6 +39,8 @@ function onCreatePost()
     end
 
     setProperty('defaultCamZoom', 1.7)
+    setProperty('showComboNum', false)
+    setProperty('showRating', false)
 end
 
 function onStartCountdown()
@@ -69,7 +71,7 @@ end
 function onStepHit()
     if curStep == 118 then
         doTweenAlpha('hudappears', 'camHUD', 1, 5, 'linear')
-    elseif curStep == 830 and isStoryMode then
+    elseif curStep == 832 and isStoryMode then
         playAnim('boyfriend', 'shocked')
     end
 end
