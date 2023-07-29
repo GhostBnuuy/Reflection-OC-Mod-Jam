@@ -1,15 +1,15 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"anim": "idle",
+			"loop": false,
 			"fps": 24,
-			"name": "Aqua Idle",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "Aqua Idle"
 		},
 		{
 			"loop": false,
@@ -20,7 +20,18 @@
 			"anim": "singLEFT",
 			"fps": 24,
 			"name": "Aqua Left",
-			"indices": [0,0,1,2,3,4,5,6,7,8]
+			"indices": [
+				0,
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8
+			]
 		},
 		{
 			"loop": false,
@@ -31,7 +42,18 @@
 			"anim": "singDOWN",
 			"fps": 24,
 			"name": "Aqua Down",
-			"indices": [0,0,1,2,3,4,5,6,7,8]
+			"indices": [
+				0,
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8
+			]
 		},
 		{
 			"loop": false,
@@ -42,7 +64,18 @@
 			"anim": "singUP",
 			"fps": 24,
 			"name": "Aqua Up",
-			"indices": [0,0,1,2,3,4,5,6,7,8]
+			"indices": [
+				0,
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8
+			]
 		},
 		{
 			"loop": false,
@@ -53,11 +86,22 @@
 			"anim": "singRIGHT",
 			"fps": 24,
 			"name": "Aqua Right",
-			"indices": [0,0,1,2,3,4,5,6,7,8]
+			"indices": [
+				0,
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8
+			]
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/Aqua",
+	"image": "characters/AquaAlt",
 	"position": [
 		0,
 		0
@@ -73,6 +117,6 @@
 		70,
 		20
 	],
-	"sing_duration": 5.7,
+	"sing_duration": 5.1,
 	"scale": 0.9
 }

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="AquaAlt.png">
+	<!-- Created with Adobe Animate version 22.0.5.191 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Aqua Down0000" x="10" y="10" width="217" height="668" frameX="0" frameY="-1" frameWidth="217" frameHeight="669"/>
+	<SubTexture name="Aqua Down0001" x="10" y="10" width="217" height="668" frameX="0" frameY="-1" frameWidth="217" frameHeight="669"/>
+	<SubTexture name="Aqua Down0002" x="235" y="10" width="216" height="669" frameX="0" frameY="0" frameWidth="217" frameHeight="669"/>
+	<SubTexture name="Aqua Down0003" x="235" y="10" width="216" height="669" frameX="0" frameY="0" frameWidth="217" frameHeight="669"/>
+	<SubTexture name="Aqua Down0004" x="235" y="10" width="216" height="669" frameX="0" frameY="0" frameWidth="217" frameHeight="669"/>
+	<SubTexture name="Aqua Down0005" x="235" y="10" width="216" height="669" frameX="0" frameY="0" frameWidth="217" frameHeight="669"/>
+	<SubTexture name="Aqua Down0006" x="235" y="10" width="216" height="669" frameX="0" frameY="0" frameWidth="217" frameHeight="669"/>
+	<SubTexture name="Aqua Down0007" x="235" y="10" width="216" height="669" frameX="0" frameY="0" frameWidth="217" frameHeight="669"/>
+	<SubTexture name="Aqua Down0008" x="235" y="10" width="216" height="669" frameX="0" frameY="0" frameWidth="217" frameHeight="669"/>
+	<SubTexture name="Aqua Down0009" x="235" y="10" width="216" height="669" frameX="0" frameY="0" frameWidth="217" frameHeight="669"/>
+	<SubTexture name="Aqua Idle0000" x="459" y="10" width="215" height="676" frameX="0" frameY="-4" frameWidth="223" frameHeight="680"/>
+	<SubTexture name="Aqua Idle0001" x="459" y="10" width="215" height="676" frameX="0" frameY="-4" frameWidth="223" frameHeight="680"/>
+	<SubTexture name="Aqua Idle0002" x="682" y="10" width="216" height="677" frameX="-2" frameY="-3" frameWidth="223" frameHeight="680"/>
+	<SubTexture name="Aqua Idle0003" x="682" y="10" width="216" height="677" frameX="-2" frameY="-3" frameWidth="223" frameHeight="680"/>
+	<SubTexture name="Aqua Idle0004" x="906" y="10" width="216" height="678" frameX="-3" frameY="-2" frameWidth="223" frameHeight="680"/>
+	<SubTexture name="Aqua Idle0005" x="906" y="10" width="216" height="678" frameX="-3" frameY="-2" frameWidth="223" frameHeight="680"/>
+	<SubTexture name="Aqua Idle0006" x="1130" y="10" width="216" height="680" frameX="-7" frameY="0" frameWidth="223" frameHeight="680"/>
+	<SubTexture name="Aqua Idle0007" x="1130" y="10" width="216" height="680" frameX="-7" frameY="0" frameWidth="223" frameHeight="680"/>
+	<SubTexture name="Aqua Idle0008" x="1130" y="10" width="216" height="680" frameX="-7" frameY="0" frameWidth="223" frameHeight="680"/>
+	<SubTexture name="Aqua Idle0009" x="1130" y="10" width="216" height="680" frameX="-7" frameY="0" frameWidth="223" frameHeight="680"/>
+	<SubTexture name="Aqua Idle0010" x="1130" y="10" width="216" height="680" frameX="-7" frameY="0" frameWidth="223" frameHeight="680"/>
+	<SubTexture name="Aqua Idle0011" x="1130" y="10" width="216" height="680" frameX="-7" frameY="0" frameWidth="223" frameHeight="680"/>
+	<SubTexture name="Aqua Idle0012" x="1130" y="10" width="216" height="680" frameX="-7" frameY="0" frameWidth="223" frameHeight="680"/>
+	<SubTexture name="Aqua Idle0013" x="1130" y="10" width="216" height="680" frameX="-7" frameY="0" frameWidth="223" frameHeight="680"/>
+	<SubTexture name="Aqua Left0000" x="10" y="698" width="270" height="675"/>
+	<SubTexture name="Aqua Left0001" x="10" y="698" width="270" height="675"/>
+	<SubTexture name="Aqua Left0002" x="288" y="698" width="265" height="674" frameX="-4" frameY="-1" frameWidth="270" frameHeight="675"/>
+	<SubTexture name="Aqua Left0003" x="288" y="698" width="265" height="674" frameX="-4" frameY="-1" frameWidth="270" frameHeight="675"/>
+	<SubTexture name="Aqua Left0004" x="288" y="698" width="265" height="674" frameX="-4" frameY="-1" frameWidth="270" frameHeight="675"/>
+	<SubTexture name="Aqua Left0005" x="288" y="698" width="265" height="674" frameX="-4" frameY="-1" frameWidth="270" frameHeight="675"/>
+	<SubTexture name="Aqua Left0006" x="288" y="698" width="265" height="674" frameX="-4" frameY="-1" frameWidth="270" frameHeight="675"/>
+	<SubTexture name="Aqua Left0007" x="288" y="698" width="265" height="674" frameX="-4" frameY="-1" frameWidth="270" frameHeight="675"/>
+	<SubTexture name="Aqua Left0008" x="288" y="698" width="265" height="674" frameX="-4" frameY="-1" frameWidth="270" frameHeight="675"/>
+	<SubTexture name="Aqua Left0009" x="288" y="698" width="265" height="674" frameX="-4" frameY="-1" frameWidth="270" frameHeight="675"/>
+	<SubTexture name="Aqua Right0000" x="561" y="698" width="216" height="678" frameX="-6" frameY="0" frameWidth="222" frameHeight="678"/>
+	<SubTexture name="Aqua Right0001" x="561" y="698" width="216" height="678" frameX="-6" frameY="0" frameWidth="222" frameHeight="678"/>
+	<SubTexture name="Aqua Right0002" x="785" y="698" width="221" height="674" frameX="0" frameY="-4" frameWidth="222" frameHeight="678"/>
+	<SubTexture name="Aqua Right0003" x="785" y="698" width="221" height="674" frameX="0" frameY="-4" frameWidth="222" frameHeight="678"/>
+	<SubTexture name="Aqua Right0004" x="785" y="698" width="221" height="674" frameX="0" frameY="-4" frameWidth="222" frameHeight="678"/>
+	<SubTexture name="Aqua Right0005" x="785" y="698" width="221" height="674" frameX="0" frameY="-4" frameWidth="222" frameHeight="678"/>
+	<SubTexture name="Aqua Right0006" x="785" y="698" width="221" height="674" frameX="0" frameY="-4" frameWidth="222" frameHeight="678"/>
+	<SubTexture name="Aqua Right0007" x="785" y="698" width="221" height="674" frameX="0" frameY="-4" frameWidth="222" frameHeight="678"/>
+	<SubTexture name="Aqua Right0008" x="785" y="698" width="221" height="674" frameX="0" frameY="-4" frameWidth="222" frameHeight="678"/>
+	<SubTexture name="Aqua Right0009" x="785" y="698" width="221" height="674" frameX="0" frameY="-4" frameWidth="222" frameHeight="678"/>
+	<SubTexture name="Aqua Up0000" x="1014" y="698" width="217" height="696"/>
+	<SubTexture name="Aqua Up0001" x="1014" y="698" width="217" height="696"/>
+	<SubTexture name="Aqua Up0002" x="1239" y="698" width="217" height="694" frameX="0" frameY="-2" frameWidth="217" frameHeight="696"/>
+	<SubTexture name="Aqua Up0003" x="1239" y="698" width="217" height="694" frameX="0" frameY="-2" frameWidth="217" frameHeight="696"/>
+	<SubTexture name="Aqua Up0004" x="1239" y="698" width="217" height="694" frameX="0" frameY="-2" frameWidth="217" frameHeight="696"/>
+	<SubTexture name="Aqua Up0005" x="1239" y="698" width="217" height="694" frameX="0" frameY="-2" frameWidth="217" frameHeight="696"/>
+	<SubTexture name="Aqua Up0006" x="1239" y="698" width="217" height="694" frameX="0" frameY="-2" frameWidth="217" frameHeight="696"/>
+	<SubTexture name="Aqua Up0007" x="1239" y="698" width="217" height="694" frameX="0" frameY="-2" frameWidth="217" frameHeight="696"/>
+	<SubTexture name="Aqua Up0008" x="1239" y="698" width="217" height="694" frameX="0" frameY="-2" frameWidth="217" frameHeight="696"/>
+	<SubTexture name="Aqua Up0009" x="1239" y="698" width="217" height="694" frameX="0" frameY="-2" frameWidth="217" frameHeight="696"/>
+</TextureAtlas>
