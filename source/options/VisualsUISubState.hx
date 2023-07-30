@@ -67,7 +67,7 @@ class VisualsUISubState extends BaseOptionsMenu
 			"If checked, ratings (Sick, Good, Bad, Shit) won't be attached to the UI",
 			'hudInWorld',
 			'bool',
-			true);
+			false);
 		addOption(option);
 
 		var option:Option = new Option('Camera Zooms',

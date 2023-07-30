@@ -12,7 +12,7 @@ class ClientPrefs {
 	public static var opponentStrums:Bool = true;
 	public static var showFPS:Bool = false;
 	public static var flashing:Bool = true;
-	public static var hudInWorld:Bool = true;
+	public static var hudInWorld:Bool = false;
 	public static var globalAntialiasing:Bool = true;
 	public static var noteSplashes:Bool = true;
 	public static var lowQuality:Bool = false;
