@@ -222,8 +222,10 @@ class TitleState extends MusicBeatState
 	var logoBl:FlxSprite;
 	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
+	var actualLogo:FlxSprite;
 	var titleText:FlxSprite;
 	var swagShader:ColorSwap = null;
+	var coolText:FlxText;
 
 	function startIntro()
 	{
@@ -259,17 +261,26 @@ class TitleState extends MusicBeatState
 		persistentUpdate = true;
 
 		var bg:FlxSprite = new FlxSprite();
+		bg.loadGraphic(Paths.image('mainmenu/titlebg'));
+		bg.screenCenter();
 
-		if (titleJSON.backgroundSprite != null && titleJSON.backgroundSprite.length > 0 && titleJSON.backgroundSprite != "none"){
-			bg.loadGraphic(Paths.image(titleJSON.backgroundSprite));
-		}else{
-			bg.makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
-		}
+		// if (titleJSON.backgroundSprite != null && titleJSON.backgroundSprite.length > 0 && titleJSON.backgroundSprite != "none"){
+		// 	bg.loadGraphic(Paths.image(titleJSON.backgroundSprite));
+		// }else{
+		// 	bg.makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		// }
 
-		// bg.antialiasing = ClientPrefs.globalAntialiasing;
+		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		// bg.setGraphicSize(Std.int(bg.width * 0.6));
-		// bg.updateHitbox();
+		bg.updateHitbox();
 		add(bg);
+
+		actualLogo = new FlxSprite(0, 470).loadGraphic(Paths.image('mainmenu/title'));
+		actualLogo.scale.set(0.8, 0.8);
+		actualLogo.antialiasing = ClientPrefs.globalAntialiasing;
+		actualLogo.updateHitbox();
+		actualLogo.screenCenter(X);
+		add(actualLogo);
 
 		logoBl = new FlxSprite(titleJSON.titlex, titleJSON.titley);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
@@ -318,9 +329,9 @@ class TitleState extends MusicBeatState
 		}
 		gfDance.antialiasing = ClientPrefs.globalAntialiasing;
 
-		add(gfDance);
+		//add(gfDance);
 		gfDance.shader = swagShader.shader;
-		add(logoBl);
+		//add(logoBl);
 		logoBl.shader = swagShader.shader;
 
 		titleText = new FlxSprite(titleJSON.startx, titleJSON.starty);
@@ -363,7 +374,12 @@ class TitleState extends MusicBeatState
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
 		// titleText.screenCenter(X);
-		add(titleText);
+		//add(titleText);
+
+		coolText = new FlxText(0, 600, 0, 'Press Enter to Begin', 100);
+		coolText.setFormat(Paths.font('coves.otf'), 40);
+		coolText.screenCenter(X);
+		add(coolText);
 
 		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('logo'));
 		logo.screenCenter();
@@ -629,52 +645,47 @@ class TitleState extends MusicBeatState
 					FlxG.sound.music.fadeIn(3, 0.5, 0.8);
 				case 2:
 					createCoolText(['Brought to you by']);
+				case 3:
+					//deleteCoolText();
+					addMoreText('Ghost Bunny');
 				case 4:
-					deleteCoolText();
-					createCoolText(['Ghost Bunny', 'Swe', 'Brewy', 'Miss Beepy']);
+					addMoreText('Swe');
 				case 5:
-					deleteCoolText();
-				// credTextShit.visible = false;
-				// credTextShit.text = 'In association \nwith';
-				// credTextShit.screenCenter();
+					addMoreText('Brewy');
+					//deleteCoolText();
 				case 6:
-					#if PSYCH_WATERMARKS
-					createCoolText(['Not associated', 'with'], -40);
-					#else
-					createCoolText(['In association', 'with'], -40);
-					#end
-				case 8:
-					addMoreText('newgrounds', -40);
-					ngSpr.visible = true;
+					addMoreText('Miss Beepy');
+					//#if PSYCH_WATERMARKS
+					//createCoolText(['Not associated', 'with'], -40);
+					//#else
+					//createCoolText(['In association', 'with'], -40);
+					//#end
+				case 7:
+					deleteCoolText();
+					createCoolText(['Created for'], -40);
+					// ngSpr.visible = true;
 				// credTextShit.text += '\nNewgrounds';
 				case 9:
-					deleteCoolText();
-					ngSpr.visible = false;
+					addMoreText('FNF OC Mod Jam 2023', -40);
+					// deleteCoolText();
+					// ngSpr.visible = false;
 				// credTextShit.visible = false;
 
 				// credTextShit.text = 'Shoutouts Tom Fulp';
 				// credTextShit.screenCenter();
 				case 10:
-					createCoolText([curWacky[0]]);
+					ngSpr.visible = true;
 				// credTextShit.visible = true;
-				case 12:
-					addMoreText(curWacky[1]);
-				// credTextShit.text += '\nlmao';
-				case 13:
+				case 11:
 					deleteCoolText();
-				// credTextShit.visible = false;
-				// credTextShit.text = "Friday";
-				// credTextShit.screenCenter();
-				case 14:
-					addMoreText('Friday');
+					ngSpr.visible = false;
+				case 12:
+					createCoolText(['Midnight'], 80);
 				// credTextShit.visible = true;
+				case 14:
+					deleteCoolText();
+					createCoolText(['Midnight Meeting'], 80);
 				case 15:
-					addMoreText('Night');
-				// credTextShit.text += '\nNight';
-				case 16:
-					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
-
-				case 17:
 					skipIntro();
 			}
 		}
