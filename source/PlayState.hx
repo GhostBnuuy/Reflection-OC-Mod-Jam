@@ -3842,7 +3842,6 @@ class PlayState extends MusicBeatState
 
 
 	public var transitioning = false;
-	//var daSong:String = Paths.formatToSongPath(curSong);
 	public function endSong():Void
 	{
 		//Should kill you if you tried to cheat
