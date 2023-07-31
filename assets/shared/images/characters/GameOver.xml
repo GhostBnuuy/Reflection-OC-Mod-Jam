@@ -51,4 +51,5 @@
 	<SubTexture name="GameOverLoop0025" x="1186" y="257" width="561" height="209" frameX="-10" frameY="-4" frameWidth="581" frameHeight="217"/>
 	<SubTexture name="GameOverLoop0026" x="1186" y="257" width="561" height="209" frameX="-10" frameY="-4" frameWidth="581" frameHeight="217"/>
 	<SubTexture name="GameOverLoop0027" x="1186" y="257" width="561" height="209" frameX="-10" frameY="-4" frameWidth="581" frameHeight="217"/>
+	<!-- https://cdn.discordapp.com/attachments/893464691047804971/1135574629893800079/goodbye.png -->
 </TextureAtlas>

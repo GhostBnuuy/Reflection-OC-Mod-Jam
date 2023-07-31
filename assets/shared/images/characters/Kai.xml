@@ -56,4 +56,11 @@
 	<SubTexture name="Kai Up0007" x="10" y="2156" width="261" height="714" frameX="-1" frameY="-2" frameWidth="262" frameHeight="716"/>
 	<SubTexture name="Kai Up0008" x="10" y="2156" width="261" height="714" frameX="-1" frameY="-2" frameWidth="262" frameHeight="716"/>
 	<SubTexture name="Kai Up0009" x="10" y="2156" width="261" height="714" frameX="-1" frameY="-2" frameWidth="262" frameHeight="716"/>
+	<!-- QnV0IEknbGwga2VlcCBnb2luZywgYW5kIGNoZXJpc2ggYWxsIG1lbW9yaWVzIHdlIGhhZCB0b2dldGhlci4gSSdsbCBrZWVwIGxpdmluZywgd2l0aG91dCB5b3Uu
+
+
+
+
+
+	SSdsbCB2aXNpdCBvdXIgZmF2b3JpdGUgcGxhY2Ugd2hlbiB0aGUgY2xvY2sgc3RyaWtlcyAxMiBhbmQgdGhlIG1vb24gaXMgc2hpbmluZyBicmlnaHQuIExvb2tpbmcgZG93biBhdCB0aGUgcml2ZXIsIGdhemluZyBhdCBteSByZWZsZWN0aW9uLiBXaWxsIEkgc2VlIHlvdXJzIG5leHQgdG8gbWluZT8=-->
 </TextureAtlas>
