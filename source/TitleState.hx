@@ -376,8 +376,9 @@ class TitleState extends MusicBeatState
 		// titleText.screenCenter(X);
 		//add(titleText);
 
-		coolText = new FlxText(0, 600, 0, 'Press Enter to Begin', 100);
-		coolText.setFormat(Paths.font('coves.otf'), 40);
+		coolText = new FlxText(0, 650, 0, 'Press Enter to Begin', 100);
+		coolText.setFormat(Paths.font('coves.otf'), 50);
+		coolText.antialiasing = ClientPrefs.globalAntialiasing;
 		coolText.screenCenter(X);
 		add(coolText);
 
@@ -403,7 +404,7 @@ class TitleState extends MusicBeatState
 
 		credTextShit.visible = false;
 
-		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('newgrounds_logo'));
+		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('swag'));
 		add(ngSpr);
 		ngSpr.visible = false;
 		ngSpr.setGraphicSize(Std.int(ngSpr.width * 0.8));
