@@ -16,6 +16,8 @@ This mod was made with Psych Engine :flushed:
 
 ## Download Links
 
-**[GameBanana]()**
+**[GameBanana](https://gamebanana.com/mods/459681)**
 
 **[GitHub]()**
+
+**[Google Drive](https://drive.google.com/file/d/1Da3x3-DUGyJzTloNgicToNj36MIadWS1/view)**
