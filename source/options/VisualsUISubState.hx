@@ -63,11 +63,12 @@ class VisualsUISubState extends BaseOptionsMenu
 			true);
 		addOption(option);
 
-		var option:Option = new Option('Ratings in the World',
-			"If checked, ratings (Sick, Good, Bad, Shit) won't be attached to the UI",
-			'hudInWorld',
-			'bool',
-			false);
+		var option:Option = new Option('Ratings:',
+			"Where should the ratings be?",
+			'ratingsCam',
+			'string',
+			'In The World',
+			['Disabled', 'In The World', 'HUD']);
 		addOption(option);
 
 		var option:Option = new Option('Camera Zooms',

@@ -4114,7 +4114,7 @@ class PlayState extends MusicBeatState
 		rating.acceleration.y = 550 * playbackRate * playbackRate;
 		rating.velocity.y -= FlxG.random.int(140, 175) * playbackRate;
 		rating.velocity.x -= FlxG.random.int(0, 10) * playbackRate;
-		rating.visible = (!ClientPrefs.hideHud && showRating);
+		rating.visible = (!ClientPrefs.hideHud && showRating && ClientPrefs.ratingsCam != 'Disabled');
 		rating.x += ClientPrefs.comboOffset[0];
 		rating.y -= ClientPrefs.comboOffset[1];
 
@@ -4130,10 +4130,7 @@ class PlayState extends MusicBeatState
 		comboSpr.y += 60;
 		comboSpr.velocity.x += FlxG.random.int(1, 10) * playbackRate;
 
-		if (!ClientPrefs.hudInWorld)
-			rating.cameras = [camHUD];
-		else
-			rating.cameras = [camGame];
+		rating.cameras = ClientPrefs.ratingsCam == 'HUD' ? [camHUD] : [camGame];
 
 		insert(members.indexOf(strumLineNotes), rating);
 		
@@ -4190,10 +4187,7 @@ class PlayState extends MusicBeatState
 		for (i in seperatedScore)
 		{
 			var numScore:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'num' + Std.int(i) + pixelShitPart2));
-			if (!ClientPrefs.hudInWorld)
-				numScore.cameras = [camHUD];
-			else
-				numScore.cameras = [camGame];
+			numScore.cameras = ClientPrefs.ratingsCam == 'HUD' ? [camHUD] : [camGame];
 			numScore.screenCenter();
 			numScore.x = coolText.x + (43 * daLoop) - 90;
 			numScore.y += 80;
@@ -4218,7 +4212,7 @@ class PlayState extends MusicBeatState
 			numScore.acceleration.y = FlxG.random.int(200, 300) * playbackRate * playbackRate;
 			numScore.velocity.y -= FlxG.random.int(140, 160) * playbackRate;
 			numScore.velocity.x = FlxG.random.float(-5, 5) * playbackRate;
-			numScore.visible = !ClientPrefs.hideHud;
+			numScore.visible = (!ClientPrefs.hideHud && ClientPrefs.ratingsCam != 'Disabled');
 
 			//if (combo >= 10 || combo == 0)
 			if(showComboNum)
