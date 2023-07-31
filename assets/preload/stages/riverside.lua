@@ -39,8 +39,8 @@ function onCreatePost()
     end
 
     setProperty('defaultCamZoom', 1.7)
-    setProperty('showComboNum', false)
-    setProperty('showRating', false)
+    --setProperty('showComboNum', false)
+    --setProperty('showRating', false)
 end
 
 function onStartCountdown()

@@ -3,23 +3,23 @@ local cgs = 'backgrounds/CG/'
 fml = {'iconP2', 'healthBar', 'healthBarBG', 'scoreTxt', 'timeBar', 'timeBarBG', 'timeTxt'}
 
 function onCreate()
-    makeLuaSprite('sky', path..'nightsky', -418, -1200)
+    makeLuaSprite('sky', path..'nightsky', -718, -1200)
     scaleObject('sky', 1.2, 1.2)
     addLuaSprite('sky', false)
 
-    makeLuaSprite('bg', path..'bg', -410, -1180)
+    makeLuaSprite('bg', path..'bg', -710, -1180)
     scaleObject('bg', 1.2, 1.2)
     addLuaSprite('bg', false)
 
-    makeLuaSprite('bg2', path..'bg2', -375, -1200)
+    makeLuaSprite('bg2', path..'bg2', -775, -1200)
     scaleObject('bg2', 1.2, 1.2)
     addLuaSprite('bg2', false)
 
-    makeLuaSprite('fg', path..'fg', -400, 820)
+    makeLuaSprite('fg', path..'fg', -700, 820)
     scaleObject('fg', 1.2, 1.2)
     addLuaSprite('fg', true)
 
-    makeLuaSprite('lighting', path..'lighting', -70, -400)
+    makeLuaSprite('lighting', path..'lighting', -430, -400)
     scaleObject('lighting', 1.2, 1.2)
     setBlendMode('lighting', 'add')
     addLuaSprite('lighting', true)
