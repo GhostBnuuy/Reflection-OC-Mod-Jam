@@ -18,6 +18,10 @@ This mod was made with Psych Engine :flushed:
 
 **[GameBanana](https://gamebanana.com/mods/459681)**
 
-**[GitHub]()**
+**[GameJolt](https://gamejolt.com/games/midnightmeeting/840319)**
 
-**[Google Drive](https://drive.google.com/file/d/1Da3x3-DUGyJzTloNgicToNj36MIadWS1/view)**
+**[Itch.io](https://ghost-bnuuy.itch.io/midnight-meeting)**
+
+**[GitHub](https://github.com/GhostBnuuy/Reflection-OC-Mod-Jam/releases/tag/v1.1-hotfix)**
+
+**[Google Drive](https://drive.google.com/file/d/1rKwlg4tZ99ysgmzzlC5x7HXv2JlhV3Ff/view?usp=drive_link)**
