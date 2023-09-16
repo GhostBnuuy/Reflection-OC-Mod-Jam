@@ -28,12 +28,16 @@ function onCreate()
     setTextSize('text1', 60)
     setTextFont('text1', 'coves.otf')
     addLuaText('text1')
+    setObjectCamera('text1', 'CamOther')
+    screenCenter('text1')
     setProperty('text1.visible', false)
 
     makeLuaText('text2', 'Farewell', 0, 530, 380)
     setTextSize('text2', 60)
     setTextFont('text2', 'coves.otf')
     addLuaText('text2')
+    setObjectCamera('text2', 'CamOther')
+    screenCenter('text2')
     setProperty('text2.visible', false)
 
     -- the "cutscene art"
@@ -61,6 +65,8 @@ end
 
 function onCreatePost()
     setProperty('gf.visible', false)
+
+    setPropertyFromClass('GameOverSubstate', 'characterName', 'gameover2')
 end
 
 function onBeatHit()

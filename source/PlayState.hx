@@ -432,7 +432,7 @@ class PlayState extends MusicBeatState
 		detailsPausedText = "Paused - " + detailsText;
 		#end
 
-		GameOverSubstate.resetVariables();
+		//GameOverSubstate.resetVariables();
 		var songName:String = Paths.formatToSongPath(SONG.song);
 
 		curStage = SONG.stage;
@@ -682,10 +682,10 @@ class PlayState extends MusicBeatState
 				add(evilSnow);
 
 			case 'school': //Week 6 - Senpai, Roses
-				GameOverSubstate.deathSoundName = 'fnf_loss_sfx-pixel';
-				GameOverSubstate.loopSoundName = 'gameOver-pixel';
-				GameOverSubstate.endSoundName = 'gameOverEnd-pixel';
-				GameOverSubstate.characterName = 'bf-pixel-dead';
+				// GameOverSubstate.deathSoundName = 'fnf_loss_sfx-pixel';
+				// GameOverSubstate.loopSoundName = 'gameOver-pixel';
+				// GameOverSubstate.endSoundName = 'gameOverEnd-pixel';
+				// GameOverSubstate.characterName = 'bf-pixel-dead';
 
 				var bgSky:BGSprite = new BGSprite('weeb/weebSky', 0, 0, 0.1, 0.1);
 				add(bgSky);
@@ -746,10 +746,10 @@ class PlayState extends MusicBeatState
 				}
 
 			case 'schoolEvil': //Week 6 - Thorns
-				GameOverSubstate.deathSoundName = 'fnf_loss_sfx-pixel';
-				GameOverSubstate.loopSoundName = 'gameOver-pixel';
-				GameOverSubstate.endSoundName = 'gameOverEnd-pixel';
-				GameOverSubstate.characterName = 'bf-pixel-dead';
+				// GameOverSubstate.deathSoundName = 'fnf_loss_sfx-pixel';
+				// GameOverSubstate.loopSoundName = 'gameOver-pixel';
+				// GameOverSubstate.endSoundName = 'gameOverEnd-pixel';
+				// GameOverSubstate.characterName = 'bf-pixel-dead';
 
 				/*if(!ClientPrefs.lowQuality) { //Does this even do something?
 					var waveEffectBG = new FlxWaveEffect(FlxWaveMode.ALL, 2, -1, 3, 2);
@@ -838,7 +838,7 @@ class PlayState extends MusicBeatState
 		switch(Paths.formatToSongPath(SONG.song))
 		{
 			case 'stress':
-				GameOverSubstate.characterName = 'bf-holding-gf-dead';
+				//GameOverSubstate.characterName = 'bf-holding-gf-dead';
 		}
 
 		if(isPixelStage) {
@@ -3334,7 +3334,7 @@ class PlayState extends MusicBeatState
 				}
 				openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x - boyfriend.positionArray[0], boyfriend.getScreenPosition().y - boyfriend.positionArray[1], camFollowPos.x, camFollowPos.y));
 
-				// MusicBeatState.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
+				//MusicBeatState.switchState(new GameOverState());
 
 				#if desktop
 				// Game Over doesn't get his own variable because it's only used here

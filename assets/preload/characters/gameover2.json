@@ -1,14 +1,13 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				37,
 				11
 			],
-			"anim": "firstDeath",
+			"loop": false,
 			"fps": 24,
-			"name": "GameOverStart",
+			"anim": "firstDeath",
 			"indices": [
 				0,
 				0,
@@ -35,36 +34,37 @@
 				0,
 				0,
 				0
-			]
+			],
+			"name": "GameOverStart"
 		},
 		{
-			"loop": true,
 			"offsets": [
 				23,
 				0
 			],
-			"anim": "deathLoop",
+			"loop": true,
 			"fps": 24,
-			"name": "GameOverLoop",
-			"indices": []
+			"anim": "deathLoop",
+			"indices": [],
+			"name": "GameOverLoop"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				37,
 				11
 			],
-			"anim": "deathConfirm",
+			"loop": false,
 			"fps": 24,
-			"name": "GameOverEnd",
-			"indices": []
+			"anim": "deathConfirm",
+			"indices": [],
+			"name": "GameOverEnd"
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/GameOver",
 	"position": [
-		-120,
-		350
+		-980,
+		120
 	],
 	"healthicon": "bf",
 	"flip_x": true,

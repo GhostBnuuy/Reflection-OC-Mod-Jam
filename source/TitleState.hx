@@ -404,7 +404,7 @@ class TitleState extends MusicBeatState
 
 		credTextShit.visible = false;
 
-		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('swag'));
+		ngSpr = new FlxSprite(0, FlxG.height - 400).loadGraphic(Paths.image('swag'));
 		add(ngSpr);
 		ngSpr.visible = false;
 		ngSpr.setGraphicSize(Std.int(ngSpr.width * 0.8));
@@ -666,7 +666,7 @@ class TitleState extends MusicBeatState
 					createCoolText(['Created for'], -40);
 					// ngSpr.visible = true;
 				// credTextShit.text += '\nNewgrounds';
-				case 9:
+				case 8:
 					addMoreText('FNF OC Mod Jam 2023', -40);
 					// deleteCoolText();
 					// ngSpr.visible = false;
@@ -674,16 +674,16 @@ class TitleState extends MusicBeatState
 
 				// credTextShit.text = 'Shoutouts Tom Fulp';
 				// credTextShit.screenCenter();
-				case 10:
+				case 9:
 					ngSpr.visible = true;
 				// credTextShit.visible = true;
-				case 11:
+				case 10:
 					deleteCoolText();
 					ngSpr.visible = false;
-				case 12:
+				case 11:
 					createCoolText(['Midnight'], 80);
 				// credTextShit.visible = true;
-				case 14:
+				case 13:
 					deleteCoolText();
 					createCoolText(['Midnight Meeting'], 80);
 				case 15:
